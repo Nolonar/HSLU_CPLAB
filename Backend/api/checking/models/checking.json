@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "checking",
+    "type": "object",
+    "properties": {
+        "ImageId": {
+            "type": "string"
+        },
+        "Correctness": {
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "ImageId",
+        "Correctness"
+    ]
+}
