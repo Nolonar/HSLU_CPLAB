@@ -1,0 +1,15 @@
+{
+  "Id": "Policy1613144771133",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1613144769447",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::classification-image-gallery/*",
+      "Principal": "*"
+    }
+  ]
+}

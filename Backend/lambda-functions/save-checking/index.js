@@ -10,7 +10,7 @@ exports.handler = async (event) => {
 
     try {
         const payload = Buffer.from(event.body, 'base64').toString();
-        console.log('request: ' + payload);
+        console.log('payload: ' + payload);
         const body = JSON.parse(payload);
         const dbParams = {
             TableName: 'checking',
