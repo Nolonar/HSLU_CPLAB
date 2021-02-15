@@ -8,8 +8,45 @@
       "DeploymentBucketName": "amplify-cplabwebapp-dev-144700-deployment",
       "UnauthRoleName": "amplify-cplabwebapp-dev-144700-unauthRole",
       "StackName": "amplify-cplabwebapp-dev-144700",
-      "StackId": "arn:aws:cloudformation:us-east-1:502647081764:stack/amplify-cplabwebapp-dev-144700/4c196df0-6f94-11eb-aa0d-0ab3a23e45a7",
+      "StackId": "arn:aws:cloudformation:us-east-1:502647081764:stack/amplify-cplabwebapp-dev-144700/7e4c27b0-6fa1-11eb-b65d-0a4db9a5d67f",
       "AmplifyAppId": "d3quhrt78dackz"
+    },
+    "categories": {
+      "function": {
+        "classificateImage": {
+          "deploymentBucketName": "amplify-cplabwebapp-dev-144700-deployment",
+          "s3Key": "amplify-builds/classificateImage-4f7a3238387642436577-build.zip"
+        },
+        "saveChecking": {
+          "deploymentBucketName": "amplify-cplabwebapp-dev-144700-deployment",
+          "s3Key": "amplify-builds/saveChecking-6a475931493861764174-build.zip"
+        }
+      }
+    }
+  },
+  "devel": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cplabwebapp-devel-163118-authRole",
+      "UnauthRoleArn": "arn:aws:iam::502647081764:role/amplify-cplabwebapp-devel-163118-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::502647081764:role/amplify-cplabwebapp-devel-163118-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cplabwebapp-devel-163118-deployment",
+      "UnauthRoleName": "amplify-cplabwebapp-devel-163118-unauthRole",
+      "StackName": "amplify-cplabwebapp-devel-163118",
+      "StackId": "arn:aws:cloudformation:us-east-1:502647081764:stack/amplify-cplabwebapp-devel-163118/da2f4c50-6fa2-11eb-a490-0ef7f3f34731",
+      "AmplifyAppId": "d3quhrt78dackz"
+    },
+    "categories": {
+      "function": {
+        "classificateImage": {
+          "deploymentBucketName": "amplify-cplabwebapp-devel-163118-deployment",
+          "s3Key": "amplify-builds/classificateImage-77654673564b71676b74-build.zip"
+        },
+        "saveChecking": {
+          "deploymentBucketName": "amplify-cplabwebapp-devel-163118-deployment",
+          "s3Key": "amplify-builds/saveChecking-6a475931493861764174-build.zip"
+        }
+      }
     }
   }
 }
