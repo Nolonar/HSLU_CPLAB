@@ -2,7 +2,7 @@
     "paths": [
         {
             "name": "/image",
-            "lambdaFunction": "classificate-image",
+            "lambdaFunction": "classificateImage",
             "privacy": {
                 "open": true
             },
@@ -10,7 +10,7 @@
         },
         {
             "name": "/checking",
-            "lambdaFunction": "save-checking",
+            "lambdaFunction": "saveChecking",
             "privacy": {
                 "open": true
             },
@@ -21,10 +21,10 @@
     "apiName": "cplabWebappApi",
     "functionArns": [
         {
-            "lambdaFunction": "classificate-image"
+            "lambdaFunction": "classificateImage"
         },
         {
-            "lambdaFunction": "save-checking"
+            "lambdaFunction": "saveChecking"
         }
     ],
     "privacy": {
@@ -36,7 +36,7 @@
     "dependsOn": [
         {
             "category": "function",
-            "resourceName": "classificate-image",
+            "resourceName": "classificateImage",
             "attributes": [
                 "Name",
                 "Arn"
@@ -44,7 +44,7 @@
         },
         {
             "category": "function",
-            "resourceName": "save-checking",
+            "resourceName": "saveChecking",
             "attributes": [
                 "Name",
                 "Arn"

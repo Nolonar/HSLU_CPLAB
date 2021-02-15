@@ -1,11 +1,11 @@
 {
   "function": {
-    "classificate-image": {
+    "classificateImage": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "save-checking": {
+    "saveChecking": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
@@ -38,7 +38,7 @@
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "classificate-image",
+          "resourceName": "classificateImage",
           "attributes": [
             "Name",
             "Arn"
@@ -46,7 +46,7 @@
         },
         {
           "category": "function",
-          "resourceName": "save-checking",
+          "resourceName": "saveChecking",
           "attributes": [
             "Name",
             "Arn"

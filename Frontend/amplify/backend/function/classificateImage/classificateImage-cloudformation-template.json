@@ -48,13 +48,13 @@
             "FunctionName": {
                 "Fn::If": [
                     "ShouldNotCreateEnvResources",
-                    "classificate-image",
+                    "classificateImage",
                     {
 
                         "Fn::Join": [
                             "",
                             [
-                                "classificate-image",
+                                "classificateImage",
                                 "-",
                                 {
                                     "Ref": "env"
@@ -79,13 +79,13 @@
                 "RoleName": {
                     "Fn::If": [
                         "ShouldNotCreateEnvResources",
-                        "cplabwebappLambdaRoled3fce227",
+                        "cplabwebappLambdaRole71bc8014",
                         {
 
                             "Fn::Join": [
                                 "",
                                 [
-                                    "cplabwebappLambdaRoled3fce227",
+                                    "cplabwebappLambdaRole71bc8014",
                                     "-",
                                     {
                                         "Ref": "env"

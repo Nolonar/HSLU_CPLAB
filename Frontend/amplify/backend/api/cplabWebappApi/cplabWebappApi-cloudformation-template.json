@@ -14,29 +14,29 @@
         },
     
     
-          "functionclassificate-imageName": {
+          "functionclassificateImageName": {
             "Type": "String",
-            "Default": "functionclassificate-imageName"
+            "Default": "functionclassificateImageName"
           },
         
           
-          "functionclassificate-imageArn": {
+          "functionclassificateImageArn": {
             "Type": "String",
-            "Default": "functionclassificate-imageArn"
+            "Default": "functionclassificateImageArn"
           },
         
           
           
     
-          "functionsave-checkingName": {
+          "functionsaveCheckingName": {
             "Type": "String",
-            "Default": "functionsave-checkingName"
+            "Default": "functionsaveCheckingName"
           },
         
           
-          "functionsave-checkingArn": {
+          "functionsaveCheckingArn": {
             "Type": "String",
-            "Default": "functionsave-checkingArn"
+            "Default": "functionsaveCheckingArn"
           }
         
           
@@ -192,7 +192,7 @@
                             
                             {
                                 
-                                "Ref": "functionclassificate-imageArn"
+                                "Ref": "functionclassificateImageArn"
                             },
                             
                             "/invocations"
@@ -291,7 +291,7 @@
                           
                           {
                             
-                            "Ref": "functionclassificate-imageArn"
+                            "Ref": "functionclassificateImageArn"
                           },
                           
                           "/invocations"
@@ -391,7 +391,7 @@
                             
                             {
                                 
-                                "Ref": "functionsave-checkingArn"
+                                "Ref": "functionsaveCheckingArn"
                             },
                             
                             "/invocations"
@@ -490,7 +490,7 @@
                           
                           {
                             
-                            "Ref": "functionsave-checkingArn"
+                            "Ref": "functionsaveCheckingArn"
                           },
                           
                           "/invocations"
@@ -547,12 +547,12 @@
                   
         
         
-        "functionclassificateimagePermissioncplabWebappApi": {
+        "functionclassificateImagePermissioncplabWebappApi": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
                     {
-                        "Ref":  "functionclassificate-imageName"
+                        "Ref":  "functionclassificateImageName"
                     },
                     
                     "Action": "lambda:InvokeFunction",
@@ -581,12 +581,12 @@
         },
         
         
-        "functionsavecheckingPermissioncplabWebappApi": {
+        "functionsaveCheckingPermissioncplabWebappApi": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
                     {
-                        "Ref":  "functionsave-checkingName"
+                        "Ref":  "functionsaveCheckingName"
                     },
                     
                     "Action": "lambda:InvokeFunction",

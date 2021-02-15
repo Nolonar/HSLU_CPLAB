@@ -63,13 +63,13 @@
             "FunctionName": {
                 "Fn::If": [
                     "ShouldNotCreateEnvResources",
-                    "save-checking",
+                    "saveChecking",
                     {
 
                         "Fn::Join": [
                             "",
                             [
-                                "save-checking",
+                                "saveChecking",
                                 "-",
                                 {
                                     "Ref": "env"
@@ -94,13 +94,13 @@
                 "RoleName": {
                     "Fn::If": [
                         "ShouldNotCreateEnvResources",
-                        "cplabwebappLambdaRoleab95cac3",
+                        "cplabwebappLambdaRole6e582ef5",
                         {
 
                             "Fn::Join": [
                                 "",
                                 [
-                                    "cplabwebappLambdaRoleab95cac3",
+                                    "cplabwebappLambdaRole6e582ef5",
                                     "-",
                                     {
                                         "Ref": "env"
