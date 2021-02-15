@@ -44,7 +44,7 @@
         },
         "saveChecking": {
           "deploymentBucketName": "amplify-cplabwebapp-devel-163118-deployment",
-          "s3Key": "amplify-builds/saveChecking-6a475931493861764174-build.zip"
+          "s3Key": "amplify-builds/saveChecking-4c6d674d4e6175504344-build.zip"
         }
       }
     }
