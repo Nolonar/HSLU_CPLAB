@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cplabwebapp-dev-144700-authRole",
+      "UnauthRoleArn": "arn:aws:iam::502647081764:role/amplify-cplabwebapp-dev-144700-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::502647081764:role/amplify-cplabwebapp-dev-144700-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cplabwebapp-dev-144700-deployment",
+      "UnauthRoleName": "amplify-cplabwebapp-dev-144700-unauthRole",
+      "StackName": "amplify-cplabwebapp-dev-144700",
+      "StackId": "arn:aws:cloudformation:us-east-1:502647081764:stack/amplify-cplabwebapp-dev-144700/4c196df0-6f94-11eb-aa0d-0ab3a23e45a7",
+      "AmplifyAppId": "d3quhrt78dackz"
+    }
+  }
+}
