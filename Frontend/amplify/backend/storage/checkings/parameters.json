@@ -1,0 +1,5 @@
+{
+    "tableName": "checkings",
+    "partitionKeyName": "image_id",
+    "partitionKeyType": "S"
+}
