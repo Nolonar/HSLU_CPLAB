@@ -75,6 +75,16 @@
             <h1>Welcome to the Amplify Framework</h1>
         </div>
         <div class="app-body">
+            <h1>Image classification</h1>
+            <form id="uploadForm" method="POST">
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+                <input type="hidden" id="uploaderId" name="uploaderId" value="michael.jackson">
+
+                <button type="submit" class="button">Upload and classify</button>
+            </form>
+            <hr />
+
             <h1>Mutation Results</h1>
             <button id="MutationEventButton">classify Image</button>
             <button id="MutationEventButton2">save checking</button>

@@ -23,6 +23,13 @@ async function saveChecking(data) {
     return await API.post(apiName, path, data);
 }
 
+const uploadForm = document.getElementById("uploadForm");
+uploadForm.addEventListener("submit", async (event) => {
+    const formdata = new FormData(uploadForm);
+    uploadImage(formdata);
+    event.preventDefault();
+});
+
 const MutationResult = document.getElementById("MutationResult");
 
 const MutationButton = document.getElementById("MutationEventButton");
