@@ -1,0 +1,54 @@
+{
+    "paths": [
+        {
+            "name": "/image",
+            "lambdaFunction": "classificate-image",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/image"
+        },
+        {
+            "name": "/checking",
+            "lambdaFunction": "save-checking",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/checking"
+        }
+    ],
+    "resourceName": "cplabWebappApi",
+    "apiName": "cplabWebappApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "classificate-image"
+        },
+        {
+            "lambdaFunction": "save-checking"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-cplabwebapp-dev-144700-authRole",
+        "unAuthRoleName": "amplify-cplabwebapp-dev-144700-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "classificate-image",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "save-checking",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
