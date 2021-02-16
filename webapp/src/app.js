@@ -27,10 +27,11 @@ const MutationResult = document.getElementById("MutationResult");
 
 const uploadForm = document.getElementById("uploadForm");
 uploadForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
     const formdata = new FormData(uploadForm);
+    console.log('formdata: ' + JSON.stringify(formdata))
     const result = await uploadImage(formdata);
     MutationResult.innerHTML += `<p>${JSON.stringify(result)}</p>`;
-    event.preventDefault();
 });
 
 const MutationButton2 = document.getElementById("MutationEventButton2");
