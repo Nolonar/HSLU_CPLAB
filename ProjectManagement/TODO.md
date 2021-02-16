@@ -1,24 +1,24 @@
-Authentifizierung: Cognito
-Hochladen: S3
-Kategorie: Rekognition
-User Feedback: DynamoDB
-Email: SNS
 
-Allgemein:
-- IAM
-- Lambda
-- CodePipeline
-- CodeCommit
-- (CodeDeploy)
-- Load Balancer (EC2)
-- API Gateway
+# Funktionen und genutzte Services:
+- Authentifizierung: Cognito
+- Speicherung der Bilder: S3
+- Klassifikation: Rekognition
+- User Feedback: DynamoDB
+- Email: SNS
+- Berechtigungen: IAM
+- Logik: Lambda
+- Entwicklung: Amplify
+- CI/CD: CodePipeline
+- CI/CD: CodeCommit
+- Load Balancer: EC2
+- Schnittstellen: API Gateway
 
-
-Arbeitspaket:
-- Frontend: HTML/CSS/JS/S3                                  (Friday)
-- REST API: API Gateway                                     (Monday)
-- Backend: Lambda/Cognito/Rekognition/S3                    (Friday)
-- Statistics: Lambda/DynamoDB/SNS                           (Monday)
-- Pipeline, build automatization: CodePipeline/CodeCommit   (Tuesday)
-- Security: IAM                                             (Wednesday)
-- Elasticity: Load Balancer (EC2)                           (Tuesday)
+# Arbeitspakete:
+- Frontend Basics (HTML/CSS/JS/S3) fertigstellen                        Léonard
+- Backend Basics (Lambda/API Gateway/Rekognition/S3) fertigstellen      Alexander
+- Cognito in Frontend einbauen                                          ???
+- Cognito in Backend einbauen                                           ???
+- Auswertung und Mailversand (Lambda/DynamoDB/SNS)                      ???
+- Pipeline, build-Automatisation (Amplify)                              ???
+- Sicherheit verbessern (IAM, Rules)                                    ???
+- Elastizität sicherstellen (Load Balancer?)                            ???
