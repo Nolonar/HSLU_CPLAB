@@ -71,6 +71,9 @@
           "deploymentBucketName": "amplify-cplabwebapp-test-110708-deployment",
           "s3Key": "amplify-builds/saveChecking-4c6d674d4e6175504344-build.zip"
         }
+      },
+      "auth": {
+        "cplabwebapp5a3b6108": {}
       }
     }
   }

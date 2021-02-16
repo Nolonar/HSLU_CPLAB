@@ -54,5 +54,13 @@
         }
       ]
     }
+  },
+  "auth": {
+    "cplabwebapp5a3b6108": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
   }
 }
