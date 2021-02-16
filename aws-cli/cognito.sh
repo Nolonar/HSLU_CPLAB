@@ -1,1 +1,0 @@
-aws cognito-idp create-user-pool --pool-name userpool --auto-verified-attributes email --username-configuration CaseSensitive=false --schema Name=email,Required=true

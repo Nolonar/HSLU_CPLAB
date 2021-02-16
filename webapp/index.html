@@ -16,35 +16,46 @@
             </div>
             <h1>Image classifier powered by AWS Amplify</h1>
         </div>
-        <div class="app-body">
-            <div id="classify">
-                <h1>Upload image to classify</h1>
-                <label for="image">Image:</label>
-                <input type="file" id="file" name="file" accept="image/*">
-                <form id="uploadForm" method="POST">
-                    <input type="hidden" id="image" name="image" required>
-                    <!-- TODO: use the current user's ID -->
-                    <input type="hidden" id="uploader_id" name="uploader_id" value="michael.jackson">
-
-                    <button type="submit" class="button">Upload and classify</button>
+        <div class="app-body dashboard">
+            <div class="panel">
+                <form id="loginForm" class="form">
+                    <div class="inputbar">
+                        <label>Username:</label>
+                        <input name="username" id="username" type="text" placeholder="Username" required>
+                    </div>
+                    <div class="inputbar">
+                        <label>Password:</label>
+                        <input name="password" id="password" type="password" placeholder="Password" required>
+                    </div>
+                    <div id="buttonbar" class="inputbar">
+                        <button id="loginButton" class="button">Login</button>
+                    </div>
                 </form>
-                <hr />
-            </div>
-            <div id="check">
-                <h1>Has the image been correctly classified?</h1>
-                <p>Classification: <span id="classification">Unknown</span></p>
 
-                <form id="checkForm" method="POST">
-                    <input type="hidden" id="image_id" name="image_id" value="lena.jpg">
-                    <input type="hidden" id="user_id" name="user_id" value="michael.jackson">
+                <div id="classify">
+                    <h1>Upload image to classify</h1>
+                    <label for="image">Image:</label>
+                    <input type="file" id="file" name="file" accept="image/*">
+                    <form id="uploadForm" method="POST">
+                        <input type="hidden" id="image" name="image" required>
+                        <button type="submit" class="button">Upload and classify</button>
+                    </form>
+                    <hr />
+                </div>
+                <div id="check">
+                    <h1>Has the image been correctly classified?</h1>
+                    <p>Classification: <span id="classification">Unknown</span></p>
 
-                    <button type="submit" id="correctButton" class="correctnessButton" value="Yes">Yes</button>
-                    <button type="submit" id="incorrectButton" class="correctnessButton" value="No">No</button>
-                </form>
-                <hr />
+                    <form id="checkForm" method="POST">
+                        <input type="hidden" id="image_id" name="image_id" value="lena.jpg">
+                        <button type="submit" id="correctButton" class="correctnessButton" value="Yes">Yes</button>
+                        <button type="submit" id="incorrectButton" class="correctnessButton" value="No">No</button>
+                    </form>
+                    <hr />
+                </div>
+                <h1>Response</h1>
+                <div id="response"></div>
             </div>
-            <h1>Response</h1>
-            <div id="response"></div>
         </div>
     </div>
     <script src="main.bundle.js"></script>
