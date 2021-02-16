@@ -19,27 +19,22 @@ async function saveChecking(data) {
             "correctness": true
         }
     }
-    console.log('data: ' + data)
+    console.log('data: ' + JSON.stringify(data));
     return await API.post(apiName, path, data);
 }
+
+const MutationResult = document.getElementById("MutationResult");
 
 const uploadForm = document.getElementById("uploadForm");
 uploadForm.addEventListener("submit", async (event) => {
     const formdata = new FormData(uploadForm);
-    uploadImage(formdata);
+    const result = await uploadImage(formdata);
+    MutationResult.innerHTML += `<p>${JSON.stringify(result)}</p>`;
     event.preventDefault();
-});
-
-const MutationResult = document.getElementById("MutationResult");
-
-const MutationButton = document.getElementById("MutationEventButton");
-MutationButton.addEventListener("click", async () => {
-    const event = await uploadImage();
-    MutationResult.innerHTML += `<p>${event}</p>`;
 });
 
 const MutationButton2 = document.getElementById("MutationEventButton2");
 MutationButton2.addEventListener("click", async () => {
     const event = await saveChecking();
-    MutationResult.innerHTML += `<p>${event}</p>`;
+    MutationResult.innerHTML += `<p>${JSON.stringify(event)}</p>`;
 });

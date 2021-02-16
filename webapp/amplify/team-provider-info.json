@@ -48,5 +48,30 @@
         }
       }
     }
+  },
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cplabwebapp-test-110708-authRole",
+      "UnauthRoleArn": "arn:aws:iam::222502850352:role/amplify-cplabwebapp-test-110708-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::222502850352:role/amplify-cplabwebapp-test-110708-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cplabwebapp-test-110708-deployment",
+      "UnauthRoleName": "amplify-cplabwebapp-test-110708-unauthRole",
+      "StackName": "amplify-cplabwebapp-test-110708",
+      "StackId": "arn:aws:cloudformation:us-east-1:222502850352:stack/amplify-cplabwebapp-test-110708/be5d9760-703e-11eb-b2f0-0e3208ac72b1",
+      "AmplifyAppId": "d3vunt86v4orbz"
+    },
+    "categories": {
+      "function": {
+        "classificateImage": {
+          "deploymentBucketName": "amplify-cplabwebapp-test-110708-deployment",
+          "s3Key": "amplify-builds/classificateImage-4d476e30663379665955-build.zip"
+        },
+        "saveChecking": {
+          "deploymentBucketName": "amplify-cplabwebapp-test-110708-deployment",
+          "s3Key": "amplify-builds/saveChecking-4c6d674d4e6175504344-build.zip"
+        }
+      }
+    }
   }
 }
