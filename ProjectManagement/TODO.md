@@ -22,3 +22,4 @@
 - Pipeline, build-Automatisation (Amplify)                              ???
 - Sicherheit verbessern (IAM, Rules)                                    ???
 - Elastizität sicherstellen (Load Balancer?)                            ???
+- Doku erstellen
