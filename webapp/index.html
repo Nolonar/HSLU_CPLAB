@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Amplify Framework</title>
+    <title>CPLAB webapp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,30 +14,38 @@
             <div class="app-logo">
                 <img src="https://aws-amplify.github.io/images/Logos/Amplify-Logo-White.svg" alt="AWS Amplify" />
             </div>
-            <h1>Welcome to the Amplify Framework</h1>
+            <h1>Image classifier powered by AWS Amplify</h1>
         </div>
         <div class="app-body">
-            <h1>Image classification</h1>
-            <form id="uploadForm" method="POST">
-                <label for="image">Image:</label>
-                <input type="file" id="image" name="image" accept="image/*" required>
-                <input type="hidden" id="uploaderId" name="uploaderId" value="michael.jackson">
+            <div id="classify">
+                <h1>Upload image to classify</h1>
+                <form id="uploadForm" method="POST">
+                    <label for="image">Image:</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                    <!-- TODO: use the current user's ID -->
+                    <input type="hidden" id="uploaderId-upload" name="uploaderId" value="michael.jackson">
 
-                <button type="submit" class="button">Upload and classify</button>
-            </form>
-            <hr />
+                    <button type="submit" class="button">Upload and classify</button>
+                </form>
+                <hr />
+            </div>
+            <div id="check">
+                <h1>Has the image been correctly classified?</h1>
+                <p>Classification: <span id="classification">Unknown</span></p>
 
-            <h1>Mutation Results</h1>
-            <button id="MutationEventButton2">save checking</button>
-            <div id="MutationResult"></div>
-            <hr />
+                <form id="checkForm" method="POST">
+                    <input type="hidden" id="image_id" name="image_id" value="lena.jpg">
+                    <input type="hidden" id="user_id" name="user_id" value="michael.jackson">
 
-            <h1>Query Results</h1>
-            <div id="QueryResult"></div>
-            <hr />
-
-            <h1>Subscription Results</h1>
-            <div id="SubscriptionResult"></div>
+                    <button type="submit" id="correctButton" class="correctnessButton" name="correctness"
+                        value="Yes">Yes</button>
+                    <button type="submit" id="incorrectButton" class="correctnessButton" name="correctness"
+                        value="No">No</button>
+                </form>
+                <hr />
+            </div>
+            <h1>Response</h1>
+            <div id="response"></div>
         </div>
     </div>
     <script src="main.bundle.js"></script>
