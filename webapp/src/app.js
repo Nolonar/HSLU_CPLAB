@@ -3,16 +3,19 @@ import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
 
-async function uploadImage(data) {
+async function uploadImage(formdata) {
     const apiName = 'cplabWebappApi';
     const path = '/image';
+    const data = {
+        body: formdata
+    }
     return await API.post(apiName, path, data);
 }
 
-async function saveChecking(data) {
+async function saveChecking(formdata) {
     const apiName = 'cplabWebappApi';
     const path = '/checking';
-    data = {
+    const data = {
         body: {
             "image_id": "lena.jpg",
             "user_id": "michael.jackson",
@@ -29,7 +32,9 @@ const uploadForm = document.getElementById("uploadForm");
 uploadForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formdata = new FormData(uploadForm);
-    console.log('formdata: ' + JSON.stringify(formdata))
+    for (const pair of formdata.entries()) {
+        console.log('formdata: ' + pair[0] + ', ' + pair[1])
+    }
     const result = await uploadImage(formdata);
     MutationResult.innerHTML += `<p>${JSON.stringify(result)}</p>`;
 });
