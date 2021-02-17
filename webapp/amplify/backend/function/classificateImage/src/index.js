@@ -3,7 +3,7 @@ const s3 = new aws.S3({ apiVersion: '2006-03-01', region: 'us-east-1' });
 const rekognition = new aws.Rekognition();
 const dynamodb = new aws.DynamoDB({ apiVersion: '2012-08-10' });
 let bucketName = 'cplabwebappbucket';
-let tableName = "checkings";
+let tableName = "images";
 
 function unwrapImage(formData) {
     const lines = formData.split(/\r?\n/);
@@ -16,7 +16,7 @@ function unwrapImage(formData) {
 }
 
 exports.handler = async (event) => {
-    console.log('request: ' + JSON.stringify(event))
+    console.log('request: ' + JSON.stringify(event));
     const response = {
         statusCode: 200,
         headers: {
@@ -72,6 +72,7 @@ exports.handler = async (event) => {
                 'image': { S: filename },
                 'user': { S: imageObject.user },
                 'category': { S: category }
+
             }
         };
         console.log(databaseParams);
