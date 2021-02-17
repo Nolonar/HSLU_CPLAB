@@ -143,8 +143,7 @@
               "Action": [
                 "logs:CreateLogGroup",
                 "logs:CreateLogStream",
-                "logs:PutLogEvents",
-                "s3:FullAccess"
+                "logs:PutLogEvents"
               ],
               "Resource": {
                 "Fn::Sub": [
@@ -162,6 +161,16 @@
                   }
                 ]
               }
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+              ],
+              "Resource": [
+                "arn:aws:s3:::*"
+              ]
             }
           ]
         }
