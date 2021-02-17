@@ -201,6 +201,4 @@ checkForm.addEventListener("submit", async (event) => {
     checkPanel.classList.add("hidden");
 
     console.log(result);
-    response.classList.remove("error");
-    response.innerText = result;
 });
