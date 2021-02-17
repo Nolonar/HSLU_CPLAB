@@ -31,13 +31,13 @@
             "Properties": {
                 "AttributeDefinitions": [
                     {
-                        "AttributeName": "image_id",
+                        "AttributeName": "image",
                         "AttributeType": "S"
                     }
                 ],
                 "KeySchema": [
                     {
-                        "AttributeName": "image_id",
+                        "AttributeName": "image",
                         "KeyType": "HASH"
                     }
                 ],

@@ -19,13 +19,13 @@
       "Type": "String",
       "Default": "functionclassificateImageArn"
     },
-    "functionsaveCheckingName": {
+    "functioncplabwebappsavecheckingName": {
       "Type": "String",
-      "Default": "functionsaveCheckingName"
+      "Default": "functioncplabwebappsavecheckingName"
     },
-    "functionsaveCheckingArn": {
+    "functioncplabwebappsavecheckingArn": {
       "Type": "String",
-      "Default": "functionsaveCheckingArn"
+      "Default": "functioncplabwebappsavecheckingArn"
     }
   },
   "Conditions": {
@@ -356,7 +356,7 @@
                         },
                         ":lambda:path/2015-03-31/functions/",
                         {
-                          "Ref": "functionsaveCheckingArn"
+                          "Ref": "functioncplabwebappsavecheckingArn"
                         },
                         "/invocations"
                       ]
@@ -451,7 +451,7 @@
                         },
                         ":lambda:path/2015-03-31/functions/",
                         {
-                          "Ref": "functionsaveCheckingArn"
+                          "Ref": "functioncplabwebappsavecheckingArn"
                         },
                         "/invocations"
                       ]
@@ -532,11 +532,11 @@
         }
       }
     },
-    "functionsaveCheckingPermissioncplabWebappApi": {
+    "functioncplabwebappsavecheckingPermissioncplabWebappApi": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "FunctionName": {
-          "Ref": "functionsaveCheckingName"
+          "Ref": "functioncplabwebappsavecheckingName"
         },
         "Action": "lambda:InvokeFunction",
         "Principal": "apigateway.amazonaws.com",
@@ -562,7 +562,7 @@
         }
       }
     },
-    "DeploymentAPIGWcplabWebappApi": {
+    "DeploymentAPIGWcplabWebappApia293fbe2": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "Description": "The Development stage deployment of your API.",

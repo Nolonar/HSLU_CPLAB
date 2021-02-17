@@ -5,14 +5,14 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "saveChecking": {
+    "cplabwebappsavechecking": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
         {
           "category": "storage",
-          "resourceName": "checkings",
+          "resourceName": "cplabWebappDynamoDB",
           "attributes": [
             "Name",
             "Arn"
@@ -26,7 +26,7 @@
     }
   },
   "storage": {
-    "checkings": {
+    "cplabWebappDynamoDB": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
     },
@@ -50,7 +50,7 @@
         },
         {
           "category": "function",
-          "resourceName": "saveChecking",
+          "resourceName": "cplabwebappsavechecking",
           "attributes": [
             "Name",
             "Arn"

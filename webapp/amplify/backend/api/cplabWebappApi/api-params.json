@@ -10,7 +10,7 @@
         },
         {
             "name": "/checking",
-            "lambdaFunction": "saveChecking",
+            "lambdaFunction": "cplabwebappsavechecking",
             "privacy": {
                 "open": true
             },
@@ -24,14 +24,14 @@
             "lambdaFunction": "classificateImage"
         },
         {
-            "lambdaFunction": "saveChecking"
+            "lambdaFunction": "cplabwebappsavechecking"
         }
     ],
     "privacy": {
         "auth": 0,
         "unauth": 0,
-        "authRoleName": "amplify-cplabwebapp-dev-144700-authRole",
-        "unAuthRoleName": "amplify-cplabwebapp-dev-144700-unauthRole"
+        "authRoleName": "amplify-cplabwebapp-test-110708-authRole",
+        "unAuthRoleName": "amplify-cplabwebapp-test-110708-unauthRole"
     },
     "dependsOn": [
         {
@@ -44,11 +44,12 @@
         },
         {
             "category": "function",
-            "resourceName": "saveChecking",
+            "resourceName": "cplabwebappsavechecking",
             "attributes": [
                 "Name",
                 "Arn"
             ]
         }
-    ]
+    ],
+    "uuid": "a293fbe2"
 }
