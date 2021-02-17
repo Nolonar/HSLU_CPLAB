@@ -16,10 +16,15 @@ const loginError = document.getElementById("loginError");
 const mainPanel = document.getElementById("mainPanel");
 const usernameLabel = document.getElementById("usernameLabel");
 const signOutButton = document.getElementById("signOutButton");
-const imageInput = document.getElementById("image");
+const classifyPanel = document.getElementById("classify");
 const fileInput = document.getElementById("file");
 const uploadForm = document.getElementById("uploadForm");
+const imageInput = document.getElementById("image");
+const checkPanel = document.getElementById("check");
+const originalImage = document.getElementById("originalImage");
+const classification = document.getElementById("classification");
 const checkForm = document.getElementById("checkForm");
+const imageId = document.getElementById("imageId");
 const response = document.getElementById("response");
 
 let currentUser = null;
@@ -37,6 +42,16 @@ function setCurrentUser(user) {
 function logLoginError(error) {
     console.error(error);
     loginError.innerText = error.message;
+}
+
+function logError(error) {
+    console.log(error);
+    response.classList.add("error");
+    if (!error.code) {
+        response.innerText = error.message;
+    } else {
+        response.innerText = `${error.code}: ${error.message}`;
+    }
 }
 
 async function signIn() {
@@ -91,7 +106,18 @@ async function postForm(path, formdata) {
     for (const pair of formdata.entries()) {
         console.log('formdata: ' + pair[0] + ', ' + JSON.stringify(pair[1]))
     }
-    return await API.post(apiName, path, { body: formdata });
+    response.innerText = "";
+    response.classList.remove("error");
+    try {
+        const result = await API.post(apiName, path, { body: formdata });
+        if (!result.statusCode) {
+            return result;
+        }
+        logError(result);
+    } catch (error) {
+        logError(error);
+    }
+    return null;
 }
 
 registerButton.addEventListener("click", async (event) => {
@@ -114,12 +140,13 @@ signOutButton.addEventListener("click", async () => {
 });
 
 fileInput.addEventListener("change", async () => {
-    const filReader = new FileReader();
+    const reader = new FileReader();
 
-    filReader.addEventListener("load", () => {
-        imageInput.value = filReader.result;
+    reader.addEventListener("load", () => {
+        imageInput.value = reader.result;
+        originalImage.style.backgroundImage = `url(${reader.result})`;
     });
-    filReader.readAsDataURL(fileInput.files[0]);
+    reader.readAsDataURL(fileInput.files[0]);
 });
 
 uploadForm.addEventListener("submit", async (event) => {
@@ -127,7 +154,13 @@ uploadForm.addEventListener("submit", async (event) => {
     const formdata = new FormData(uploadForm);
     formdata.append("user_id", currentUser.attributes.email);
     const result = await postForm("/image", formdata);
-    response.innerHTML += `<p>${JSON.stringify(result)}</p>`;
+    if (result) {
+        console.log(result);
+        imageId.value = result.filename;
+        classification.innerText = result.category;
+        classifyPanel.classList.add("hidden");
+        checkPanel.classList.remove("hidden");
+    }
 });
 
 checkForm.addEventListener("submit", async (event) => {
@@ -142,5 +175,10 @@ checkForm.addEventListener("submit", async (event) => {
     formdata.append("correctness", correctness);
     formdata.append("user_id", currentUser.attributes.email);
     const result = await postForm("/checking", formdata);
-    response.innerHTML += `<p>${JSON.stringify(result)}</p>`;
+    classifyPanel.classList.remove("hidden");
+    checkPanel.classList.add("hidden");
+
+    console.log(result);
+    response.classList.remove("error");
+    response.innerText = result;
 });

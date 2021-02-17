@@ -56,20 +56,18 @@
                         <input type="hidden" id="image" name="image" required>
                         <button type="submit" class="button">Upload and classify</button>
                     </form>
-                    <hr />
                 </div>
-                <div id="check">
+                <div id="check" class="hidden">
                     <h1>Has the image been correctly classified?</h1>
-                    <p>Classification: <span id="classification">Unknown</span></p>
+                    <div id="originalImage"></div>
+                    <p>Classification: <span id="classification"></span></p>
 
                     <form id="checkForm" method="POST">
-                        <input type="hidden" id="image_id" name="image_id" value="lena.jpg">
+                        <input type="hidden" id="imageId" name="imageId" value="lena.jpg">
                         <button type="submit" id="correctButton" class="correctnessButton" value="Yes">Yes</button>
                         <button type="submit" id="incorrectButton" class="correctnessButton" value="No">No</button>
                     </form>
-                    <hr />
                 </div>
-                <h1>Response</h1>
                 <div id="response"></div>
             </div>
         </div>

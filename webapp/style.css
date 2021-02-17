@@ -44,6 +44,14 @@ hr {
     text-align: center;
 }
 
+#originalImage {
+    height: 420px;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 label {
     margin: 5pt;
     color: #666666;

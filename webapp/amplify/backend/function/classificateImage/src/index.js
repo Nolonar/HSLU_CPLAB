@@ -54,6 +54,7 @@ exports.handler = async (event) => {
         response.body = JSON.stringify({ filename, category });
 
     } catch (err) {
+        response.statusCode = 200; // Needed for frontend to receive error message.
         response.body = JSON.stringify(err);
     }
     console.log('response: ' + JSON.stringify(response))
