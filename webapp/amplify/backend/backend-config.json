@@ -23,6 +23,11 @@
           }
         }
       ]
+    },
+    "cplabwebappgetstatistic": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "storage": {
@@ -51,6 +56,14 @@
         {
           "category": "function",
           "resourceName": "cplabwebappsavechecking",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "cplabwebappgetstatistic",
           "attributes": [
             "Name",
             "Arn"
