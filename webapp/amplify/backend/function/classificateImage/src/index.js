@@ -51,10 +51,10 @@ exports.handler = async (event) => {
         const category = (0 < result.Labels.length) ? result.Labels[0].Name : "undefined";
 
         response.statusCode = 200;
-        response.body = { filename, category };
+        response.body = JSON.stringify({ filename, category });
 
     } catch (err) {
-        response.body = { err };
+        response.body = JSON.stringify(err);
     }
     console.log('response: ' + JSON.stringify(response))
     return response;
