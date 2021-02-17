@@ -168,9 +168,12 @@
                 "s3:GetObject",
                 "s3:PutObject"
               ],
-              "Resource": [
-                "arn:aws:s3:::*"
-              ]
+              "Resource": "*"
+            },
+            {
+              "Effect": "Allow",
+              "Action": "rekognition:DetectLabels",
+              "Resource": "*"
             }
           ]
         }
