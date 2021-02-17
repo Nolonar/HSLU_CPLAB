@@ -157,13 +157,19 @@ async function updateStatistics() {
         logError(error);
         return;
     }
-    overallCorrect.innerText = statistics.correctOverall;
-    overallIncorrect.innerText = statistics.wrongOverall;
-    overallAccuracy.innerText = `${getAccuracy(statistics.correctOverall, statistics.wrongOverall)}%`;
-
-    userCorrect.innerText = statistics.correctUser;
-    userIncorrect.innerText = statistics.wrongUser;
-    userAccuracy.innerText = `${getAccuracy(statistics.correctUser, statistics.wrongUser)}%`;
+    const fields = {
+        overallCorrect: overallCorrect,
+        overallIncorrect: overallIncorrect,
+        overallAccuracy: overallAccuracy,
+        userCorrect: userCorrect,
+        userIncorrect: userIncorrect,
+        userAccuracy: userAccuracy
+    }
+    for (const i of ["Overall", "User"]) {
+        fields[i.toLowerCase() + "Correct"].innerText = `${statistics["correct" + i]} ✔`;
+        fields[i.toLowerCase() + "Incorrect"].innerText = `${statistics["wrong" + i]} ❌`;
+        fields[i.toLowerCase() + "Accuracy"].innerText = `${getAccuracy(statistics["correct" + i], statistics["wrong" + i])}% 🎯`;
+    }
 }
 
 async function postForm(path, formdata) {
