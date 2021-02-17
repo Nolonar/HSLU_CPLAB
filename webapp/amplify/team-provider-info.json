@@ -23,7 +23,7 @@
         },
         "cplabwebappgetstatistic": {
           "deploymentBucketName": "amplify-cplabwebapp-test-110708-deployment",
-          "s3Key": "amplify-builds/cplabwebappgetstatistic-362f2f74776f45453765-build.zip"
+          "s3Key": "amplify-builds/cplabwebappgetstatistic-42684c3133474135394d-build.zip"
         }
       },
       "auth": {
