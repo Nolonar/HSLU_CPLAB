@@ -3,6 +3,7 @@ import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
 
+const loadingOverlay = document.getElementById("loadingOverlay");
 const loginPanel = document.getElementById("loginPanel");
 const loginForm = document.getElementById("loginForm");
 const username = document.getElementById("username");
@@ -54,51 +55,70 @@ function logError(error) {
     }
 }
 
+async function showLoadingOverlay(callback) {
+    response.innerText = "";
+    response.classList.remove("error");
+
+    loadingOverlay.classList.remove("hidden");
+    const result = await callback();
+    loadingOverlay.classList.add("hidden");
+
+    return result;
+}
+
 async function signIn() {
-    try {
-        setCurrentUser(await Auth.signIn(username.value, password.value));
-        console.log("Login successful")
-    } catch (error) {
-        logLoginError(error);
-    }
+    showLoadingOverlay(async () => {
+        try {
+            setCurrentUser(await Auth.signIn(username.value, password.value));
+            console.log("Login successful")
+        } catch (error) {
+            logLoginError(error);
+        }
+    });
 }
 
 async function signUp() {
-    try {
-        await Auth.signUp({
-            username: username.value,
-            password: password.value,
-            attributes: { email: username.value }
-        });
-        loginForm.classList.add("hidden");
-        confirmForm.classList.remove("hidden");
-        regCode.value = "";
-    } catch (error) {
-        logLoginError(error);
-    }
+    showLoadingOverlay(async () => {
+        try {
+            await Auth.signUp({
+                username: username.value,
+                password: password.value,
+                attributes: { email: username.value }
+            });
+            loginForm.classList.add("hidden");
+            confirmForm.classList.remove("hidden");
+            regCode.value = "";
+        } catch (error) {
+            logLoginError(error);
+        }
+    });
 }
 
 async function confirmSignUp() {
-    try {
-        await Auth.confirmSignUp(username.value, regCode.value);
-        signIn();
-        loginForm.classList.remove("hidden");
-        confirmForm.classList.add("hidden");
-    } catch (error) {
-        logLoginError(error);
-    }
+    showLoadingOverlay(async () => {
+        try {
+            await Auth.confirmSignUp(username.value, regCode.value);
+            signIn();
+            loginForm.classList.remove("hidden");
+            confirmForm.classList.add("hidden");
+        } catch (error) {
+            logLoginError(error);
+        }
+    });
 }
 
 async function signOut() {
-    try {
-        await Auth.signOut();
-        loginPanel.classList.remove("hidden");
-        mainPanel.classList.add("hidden");
-        username.value = "";
-        password.value = "";
-    } catch (error) {
-        console.error(error);
-    }
+    showLoadingOverlay(async () => {
+        try {
+            await Auth.signOut();
+            loginPanel.classList.remove("hidden");
+            mainPanel.classList.add("hidden");
+            username.value = "";
+            password.value = "";
+        } catch (error) {
+            console.error(error);
+        }
+    });
 }
 
 async function postForm(path, formdata) {
@@ -106,18 +126,19 @@ async function postForm(path, formdata) {
     for (const pair of formdata.entries()) {
         console.log('formdata: ' + pair[0] + ', ' + JSON.stringify(pair[1]))
     }
-    response.innerText = "";
-    response.classList.remove("error");
-    try {
-        const result = await API.post(apiName, path, { body: formdata });
-        if (!result.statusCode) {
-            return result;
+
+    return await showLoadingOverlay(async () => {
+        try {
+            const result = await API.post(apiName, path, { body: formdata });
+            if (!result.statusCode) {
+                return result;
+            }
+            logError(result);
+        } catch (error) {
+            logError(error);
         }
-        logError(result);
-    } catch (error) {
-        logError(error);
-    }
-    return null;
+        return null;
+    });
 }
 
 registerButton.addEventListener("click", async (event) => {
@@ -152,7 +173,7 @@ fileInput.addEventListener("change", async () => {
 uploadForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formdata = new FormData(uploadForm);
-    formdata.append("user_id", currentUser.attributes.email);
+    formdata.append("userId", currentUser.attributes.email);
     const result = await postForm("/image", formdata);
     if (result) {
         console.log(result);
@@ -172,9 +193,10 @@ checkForm.addEventListener("submit", async (event) => {
     }[event.submitter.value];
 
     const formdata = new FormData(checkForm);
+    formdata.append("userId", currentUser.attributes.email);
     formdata.append("correctness", correctness);
-    formdata.append("user_id", currentUser.attributes.email);
     const result = await postForm("/checking", formdata);
+    fileInput.value = "";
     classifyPanel.classList.remove("hidden");
     checkPanel.classList.add("hidden");
 
