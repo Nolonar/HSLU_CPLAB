@@ -166,13 +166,23 @@
               "Effect": "Allow",
               "Action": [
                 "s3:GetObject",
-                "s3:PutObject"
+                "s3:PutObject",
+                "s3:ListAllMyBuckets"
               ],
               "Resource": "*"
             },
             {
               "Effect": "Allow",
               "Action": "rekognition:DetectLabels",
+              "Resource": "*"
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:GetItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem"
+              ],
               "Resource": "*"
             }
           ]

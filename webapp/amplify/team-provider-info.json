@@ -65,7 +65,7 @@
       "function": {
         "classificateImage": {
           "deploymentBucketName": "amplify-cplabwebapp-test-110708-deployment",
-          "s3Key": "amplify-builds/classificateImage-7567332f5168375a7775-build.zip"
+          "s3Key": "amplify-builds/classificateImage-6c4633686a77716c7637-build.zip"
         },
         "saveChecking": {
           "deploymentBucketName": "amplify-cplabwebapp-test-110708-deployment",

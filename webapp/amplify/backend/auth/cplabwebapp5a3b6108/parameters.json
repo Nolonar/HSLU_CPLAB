@@ -1,6 +1,6 @@
 {
     "identityPoolName": "cplabwebapp5a3b6108_identitypool_5a3b6108",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "cplabw5a3b6108",
     "userPoolName": "cplabwebapp5a3b6108_userpool_5a3b6108",
     "autoVerifiedAttributes": [
