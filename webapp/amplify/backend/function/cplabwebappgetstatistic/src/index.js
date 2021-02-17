@@ -32,9 +32,9 @@ exports.handler = async (event) => {
 
         for (const item of result.Items) {
             if (item.correctness != undefined && item.user != undefined) {
-                item.correctness.BOOL ? correctUser++ : wrongUser++;
+                item.correctness.BOOL ? correctOverall++ : wrongOverall++;
                 if (currentUser === item.user.S) {
-                    item.correctness.BOOL ? correctOverall++ : wrongOverall++;
+                    item.correctness.BOOL ? correctUser++ : wrongUser++;
                 }
             } else {
                 console.log("missig values..." + JSON.stringify(item));
