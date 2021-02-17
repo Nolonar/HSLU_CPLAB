@@ -17,7 +17,7 @@
             <h1>Image classifier powered by AWS Amplify</h1>
         </div>
         <div class="app-body dashboard">
-            <div class="panel">
+            <div id="loginPanel" class="panel">
                 <form id="loginForm" class="form">
                     <div class="inputbar">
                         <label>Username:</label>
@@ -27,11 +27,27 @@
                         <label>Password:</label>
                         <input name="password" id="password" type="password" placeholder="Password" required>
                     </div>
-                    <div id="buttonbar" class="inputbar">
+                    <div id="loginButtonbar" class="inputbar buttonbar">
                         <button id="loginButton" class="button">Login</button>
+                        <button id="registerButton" class="button">Register</button>
                     </div>
                 </form>
-
+                <form id="confirmForm" class="form hidden">
+                    <div class="inputbar">
+                        <label>Verification code:</label>
+                        <input name="regCode" id="regCode" type="text" placeholder="Verification code" required>
+                    </div>
+                    <div class="inputbar buttonbar">
+                        <button id="sendRegCodeButton" class="button">Send</button>
+                    </div>
+                </form>
+                <p id="loginError" class="error"></p>
+            </div>
+            <div id="mainPanel" class="panel hidden">
+                <div class="inputbar buttonbar">
+                    <p>Signed in as: <span id="usernameLabel"></span></p>
+                    <button id="signOutButton" class="button">Sign out</button>
+                </div>
                 <div id="classify">
                     <h1>Upload image to classify</h1>
                     <label for="image">Image:</label>

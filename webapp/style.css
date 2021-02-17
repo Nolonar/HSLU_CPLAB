@@ -73,6 +73,28 @@ button, .button {
     font-size: medium;
 }
 
+.inputbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputbar.buttonbar {
+    justify-content: flex-end;
+}
+
+#loginButtonbar {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.inputbar > label {
+    align-self: center;
+}
+
+.inputbar > input {
+    min-width: 16em;
+}
+
 #correctButton {
     background-color: #90ee90;
     border-color: #73bc73;
@@ -89,4 +111,9 @@ button, .button {
 
 button:hover, .button:hover {
     opacity: 0.8;
+}
+
+.error {
+    font-weight: bold;
+    color: #ff0000;
 }
