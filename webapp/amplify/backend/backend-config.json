@@ -29,6 +29,10 @@
     "checkings": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "cplabWebappBucket": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
     }
   },
   "api": {
