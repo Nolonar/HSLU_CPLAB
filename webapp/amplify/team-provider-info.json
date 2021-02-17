@@ -65,11 +65,11 @@
       "function": {
         "classificateImage": {
           "deploymentBucketName": "amplify-cplabwebapp-test-110708-deployment",
-          "s3Key": "amplify-builds/classificateImage-7753485239392f654970-build.zip"
+          "s3Key": "amplify-builds/classificateImage-4e4f58475669626b4b50-build.zip"
         },
         "cplabwebappsavechecking": {
           "deploymentBucketName": "amplify-cplabwebapp-test-110708-deployment",
-          "s3Key": "amplify-builds/cplabwebappsavechecking-466b4476413165525555-build.zip"
+          "s3Key": "amplify-builds/cplabwebappsavechecking-41686c55477661352b6e-build.zip"
         }
       },
       "auth": {

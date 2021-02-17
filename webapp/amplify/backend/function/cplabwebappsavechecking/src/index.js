@@ -1,6 +1,13 @@
 const aws = require('aws-sdk');
 const dynamodb = new aws.DynamoDB({ apiVersion: '2012-08-10' });
-let tableName = "images";
+
+function unwrapParameter(formData) {
+    const lines = formData.split(/\r?\n/);
+    for (let i = 0; i < lines.length; i++) {
+        console.log("Line" + i + ":" + lines[i]);
+    }
+    return { image: lines[3], user: lines[7], correctness: lines[11] }
+}
 
 exports.handler = async (event) => {
     console.log('request: ' + JSON.stringify(event));
@@ -13,18 +20,21 @@ exports.handler = async (event) => {
         body: '',
     }
     try {
+        let tableName = "images";
         if (process.env.ENV && process.env.ENV !== "NONE") {
             tableName = tableName + '-' + process.env.ENV;
         }
 
+        const parameterObject = unwrapParameter(event.body);
+        console.log(parameterObject);
         const databaseParams = {
             TableName: tableName,
             Key: {
-                'image': { S: body.ImageId }
+                "image": { S: parameterObject.image }
             },
-            UpdateExpression: "set correctness = :c",
+            UpdateExpression: "SET correctness = :c",
             ExpressionAttributeValues: {
-                ":c": 'true' === body.Correctness
+                ":c": { BOOL: "true" === parameterObject.correctness }
             },
         };
         console.log(databaseParams);
