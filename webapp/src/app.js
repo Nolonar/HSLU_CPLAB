@@ -67,6 +67,7 @@ function logError(error) {
 }
 
 async function showLoadingOverlay(callback) {
+    loginError.innerText = "";
     response.innerText = "";
     response.classList.remove("error");
 
