@@ -18,13 +18,9 @@
 - Backend Basics (Lambda/API Gateway/Rekognition/S3/DynamoDB) fertigstellen     Alexander
 - Cognito in Frontend einbauen                                                  Léonard
 - Cognito in Backend einbauen                                                   Alexander
-- Auswertung und Mailversand (Lambda/DynamoDB/SNS)                              ???
-- Frontend Statistics                                                           ???
-- Pipeline, build-Automatisation (Amplify)                                      ???
-- Sicherheit verbessern (IAM, Rules)                                            ???
-- Elastizität sicherstellen (Load Balancer?)                                    ???
-- Doku erstellen                                                                ???
-
-# Notizen
-- User-token ans Backend übergeben und dort prüfen
-- 
+- Auswertung und Mailversand (Lambda/DynamoDB/SNS)                              Alexander
+- Frontend Statistics                                                           Léonard
+- Pipeline, build-Automatisation (Amplify)                                      Alexander & Léonard
+- Sicherheit verbessern (IAM, Rules)                                            Alexander & Léonard
+- Elastizität sicherstellen (Load Balancer?)                                    Amplify
+- Doku erstellen                                                                Alexander & Léonard

@@ -27,7 +27,7 @@
         },
         "cplabwebappsendmail": {
           "deploymentBucketName": "amplify-cplabwebapp-test-110708-deployment",
-          "s3Key": "amplify-builds/cplabwebappsendmail-696f31394a666f354162-build.zip"
+          "s3Key": "amplify-builds/cplabwebappsendmail-334e462f704e53564846-build.zip"
         }
       },
       "auth": {
