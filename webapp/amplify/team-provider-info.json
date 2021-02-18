@@ -32,6 +32,12 @@
       },
       "auth": {
         "cplabwebapp5a3b6108": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3vunt86v4orbz",
+          "type": "manual"
+        }
       }
     }
   }
