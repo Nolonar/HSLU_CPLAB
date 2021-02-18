@@ -41,6 +41,7 @@ hr {
 .app-body {
     max-width: 420px;
     margin: 0 auto;
+    padding-bottom: 5em;
     text-align: center;
 }
 
