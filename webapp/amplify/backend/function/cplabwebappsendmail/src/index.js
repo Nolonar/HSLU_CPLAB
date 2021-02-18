@@ -25,18 +25,19 @@ exports.handler = async (event) => {
                 console.log("missig values..." + JSON.stringify(item));
             }
         }
-        console.log("correctOverall: " + correctOverall);
-        console.log("wrongOverall: " + wrongOverall);
+        console.log("correct overall: " + correctOverall);
+        console.log("wrong overall: " + wrongOverall);
 
         const mailParams = {
             Message:
                 `Dear user
 
-Thanks for using our image classification service.
+Thanks for using our image classification service. The summary of our classification are:
+correct overall: ${correctOverall} ✔
+wrong overall: ${wrongOverall} ❌
 
-The summary of our classification are:
-correctOverall: ${correctOverall} ✔
-wrongOverall: ${wrongOverall} ❌
+Best regards 
+Image classification webapp team
 `,
             Subject: "Daily Statistics",
             TopicArn: "arn:aws:sns:us-east-1:222502850352:StatisticMailTopic"
